@@ -28,45 +28,36 @@ function App() {
       >
         <h3>Information form</h3>
         <TextInput
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-            setNameInput(e.target.value);
-          }}
-          value={nameInput}
           labelText={'Name'}
-        />
-        {/* <div>
-          <label htmlFor='name'>Name:</label>
-          <input
-            type='text'
-            placeholder='john smith'
-            onChange={(e) => {
+          inputProps={{
+            onChange: (e) => {
               setNameInput(e.target.value);
-            }}
-            value={nameInput}
-          />
-        </div> */}
-        <div>
-          <label htmlFor='age'>Age:</label>
-          <input
-            type='text'
-            placeholder='17'
-            onChange={(e) => {
+            },
+            value: nameInput,
+            placeholder: 'john smith',
+          }}
+        />
+        <TextInput
+          labelText={'age'}
+          inputProps={{
+            onChange: (e) => {
               setAgeInput(e.target.value);
-            }}
-            value={ageInput}
-          />
-        </div>
-        <div>
-          <label htmlFor='slogan'>slogan:</label>
-          <input
-            type='text'
-            placeholder='I love to kick butt and take names'
-            onChange={(e) => {
+            },
+            value: ageInput,
+            placeholder: '17',
+          }}
+        />
+        <TextInput
+          labelText={'Slogan'}
+          inputProps={{
+            onChange: (e) => {
               setSloganInput(e.target.value);
-            }}
-            value={sloganInput}
-          />
-        </div>
+            },
+            value: sloganInput,
+            placeholder: 'john smith',
+          }}
+        />
+        <input type='submit' value='submit' />
       </form>
     </>
   );
