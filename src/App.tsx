@@ -1,20 +1,40 @@
 import { useState } from 'react';
 import './App.css';
+import { TextInput } from './TextInput';
 
 function App() {
   const [nameInput, setNameInput] = useState('');
   const [ageInput, setAgeInput] = useState('');
   const [sloganInput, setSloganInput] = useState('');
 
+  const reset = () => {
+    setNameInput('');
+    setAgeInput('');
+    setSloganInput('');
+  };
+
   return (
     <>
       <form
         onSubmit={(e) => {
           e.preventDefault();
+          console.log({
+            nameInput,
+            ageInput,
+            sloganInput,
+          });
+          reset();
         }}
       >
         <h3>Information form</h3>
-        <div>
+        <TextInput
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+            setNameInput(e.target.value);
+          }}
+          value={nameInput}
+          labelText={'Name'}
+        />
+        {/* <div>
           <label htmlFor='name'>Name:</label>
           <input
             type='text'
@@ -24,7 +44,7 @@ function App() {
             }}
             value={nameInput}
           />
-        </div>
+        </div> */}
         <div>
           <label htmlFor='age'>Age:</label>
           <input
