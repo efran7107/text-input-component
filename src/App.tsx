@@ -25,6 +25,28 @@ function App() {
             value={nameInput}
           />
         </div>
+        <div>
+          <label htmlFor='age'>Age:</label>
+          <input
+            type='text'
+            placeholder='17'
+            onChange={(e) => {
+              setAgeInput(e.target.value);
+            }}
+            value={ageInput}
+          />
+        </div>
+        <div>
+          <label htmlFor='slogan'>slogan:</label>
+          <input
+            type='text'
+            placeholder='I love to kick butt and take names'
+            onChange={(e) => {
+              setSloganInput(e.target.value);
+            }}
+            value={sloganInput}
+          />
+        </div>
       </form>
     </>
   );
